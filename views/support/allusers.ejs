@@ -1,0 +1,122 @@
+<% layout("/layouts/boilerplate-home")%>
+    <% users.forEach(function(obj, index){ %>
+        <% if( currentUser.executive===true ) {%>
+            <div class="row mt-2">
+                <div class="col-12 ">
+                    <div class="card mb-5 ">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Surname</th>
+                                    <th scope="col">Executive</th>
+                                    <th scope="col">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+
+                                    <th scope="row">
+                                        <%= index +1%>
+                                    </th>
+                                    <td>
+                                        <%=obj._id%>
+                                    </td>
+                                    <td>
+                                        <%=obj.username%>
+                                    </td>
+                                    <td>
+                                        <%=obj.surname%>
+                                    </td>
+                                    <td>
+                                        <%=obj.executive%>
+                                    </td>
+                                    <td>
+                                        <a class="d-inline card-link btn btn btn-danger"
+                                            href="/allusers/<%=obj._id %> ">Edit</a>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <% }%>
+                <%if (obj.equals(currentUser._id) && currentUser.executive===false ){%>
+                    <div class=" mt-3 row offset-4">
+                        <div class=" mb-3 col-6 ">
+                            <div class="card" style="width: 24rem;">
+                                <div class="card-header ">
+                                    <h2 class="offset-4"><b> Details </b></h2>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p><b>Title</b>
+                                                    <%= obj.userTitle %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <p> <b>Name:</b>
+                                            <%= obj.username %>
+                                                <%= obj.surname %>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <p>
+                                            <b>Email:</b>
+                                            <%= obj.email %>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <p><b>Number:</b>
+                                            <%= obj.number %>
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p><b>Street:</b>
+                                                    <%= obj.postcode %>
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p>
+                                                    <b>City:</b>
+                                                    <%= obj.city %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <p><b>Country:</b>
+                                            <%= obj.country %>
+                                        </p>
+                                    </li>
+
+                                    <div class="card-body ">
+                                        <a class="d-inline card-link btn btn-warning"
+                                            href="/allusers/<%=obj._id%>/edit ">Edit
+                                            details</a>
+                                        <!-- next two changed from account to allusers - if this not work delete it . It is related to post in card route which is marked at the very beginning -->
+                                        <a class=" card-link btn btn btn-danger" href="/allusers/<%=obj._id%>/card ">Add
+                                            card</a>
+                                        <a class=" card-link btn btn btn-success"
+                                            href="/allusers/<%=obj._id%>/allcards">All
+                                            cards</a>
+                                    </div>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                        <% }) %>

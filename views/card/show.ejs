@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate-home")%>
+
+    <div class=" mt-5 row">
+        <div class=" mb-3 col-6 offset-4">
+            <div class="card" style="width: 24rem;">
+                <div class="card-header ">
+                    <h2 class="offset-4"><b> Card </b></h2>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col">
+                                <p><b>Name: </b>
+                                    <%= card.cardOwner %>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <p> <b>Card number:</b>
+                            <%= card.cardNumber %>
+                                <%= card.year%>
+                                    <%= card.month%>
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col">
+                                <p><b>Month</b>
+                                    <%= card.expireMonth %>
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p><b>Year:</b>
+                                    <%= card.expireYear %>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="card-body offset-1">
+                    <!-- this is my path but remove it in case -->
+                    <a class="d-inline card-link btn btn btn-danger" href="/account">Account</a>
+                    <form class="d-inline" action="/card/<%=card._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-warning">DELETE</button>
+                    </form>
+                    <a class="d-inline card-link btn btn btn-success" href="/addcard">New</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

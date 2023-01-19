@@ -1,0 +1,34 @@
+<% layout("/layouts/boilerplate-home")%>
+    <div class="row ">
+        <h1 class="text-center">New Observation</h1>
+        <div class="col-6 offset-3">
+            <form action="/cosmosTV" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="title" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="location" required>
+                </div>
+                <!-- <div class="Image-3">
+                    <label class="form-label" for="image">Image Url</label>
+                    <input class="form-control" type="text" id="image" name="image" required>
+                </div> -->
+                <div class="mb-3">
+                    <label class="form-label" for="analyse">Description</label>
+                    <textarea class="form-control" type="text" id="analyse" name="analyse" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="image" name="image" multiple>
+                        <label class="input-group-text" for="image">Upload</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Add observation</button>
+                </div>
+            </form>
+            <a href="/cosmosTV">All observations</a>
+        </div>
+    </div>

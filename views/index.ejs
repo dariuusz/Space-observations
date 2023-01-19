@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
+    <link rel="stylesheet" href="/css/homePage.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="page left-side">
+            <h1 class="page-title">CosmosTV</h1>
+            <section class="information">
+                Let's track all observations.
+            </section>
+        </div>
+        <div class="page right-side">
+            <div class="form">
+                <form id="loginForm" action="/login" method="post" novalidate class="validated-form">
+                    <div class="row">
+                        <!-- <label for="inputEmail2" class="visually-hidden">Username</label> -->
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username"
+                            required>
+                    </div>
+                    <div class="row">
+                        <!-- <label for="inputPassword2" class="visually-hidden">Password</label> -->
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                            required>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="login button" href="homepage">Log in</button>
+                    </div>
+                </form>
+                <div class="form-border"></div>
+                <div class="row">
+                    <a href="register"><button type="submit" class="register button" href="register">Create new
+                            accunt</button></a>
+                    <!-- <button type="submit" class="register button" href="register">Create new accunt</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="main-footer">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus corrupti, tempora sapiente
+                consequuntur minus optio eum quibusdam voluptas suscipit doloribus animi sit asperiores at voluptate
+                nisi in doloremque odit! Impedit.</p>
+        </div>
+        <div class="cosmos-span">CosmosTV @ 2022</div>
+    </footer>
+
+</body>
+
+</html>

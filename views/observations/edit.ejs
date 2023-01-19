@@ -1,0 +1,45 @@
+<% layout("/layouts/boilerplate-home")%>
+    <div class="row">
+        <h1 class="text-center">Edit Observation</h1>
+        <div class="col-6 offset-3">
+            <form action="/cosmosTV/<%=observation._id%>?_method=PUT " method="post" novalidate class="validated-form"
+                enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="title" value="<%= observation.title %> "
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="location"
+                        value="<%= observation.location %>" required>
+                </div>
+                <div class=" mb-3">
+                    <label class="form-label" for="analyse">Description</label>
+                    <textarea class="form-control" type="text" id="analyse" name="analyse"
+                        required><%= observation.analyse %></textarea>
+                </div>
+                <div class="mb-3">
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="image" name="image" multiple>
+                        <label class="input-group-text" for="image">Upload</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <% observation.images.forEach(function(img, i) { %>
+                        <img src="<%= img.thumbnail %> " class="img-thumbnail" alt="">
+                        <div class="form-check-inline">
+                            <input type="checkbox" id="image<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                        </div>
+                        <label for="image<%=i%>">Delete</label>
+                        <% }) %>
+                </div>
+                <div class=" mb-3">
+                    <button class="btn btn-info">Update observation</button>
+                </div>
+            </form>
+            <div class="mb-3">
+                <a href="/cosmosTV/<%=observation._id%>">All observations</a>
+            </div>
+        </div>
+    </div>

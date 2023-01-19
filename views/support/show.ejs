@@ -1,0 +1,73 @@
+<% layout("/layouts/boilerplate-home")%>
+    <div class=" mt-3 row offset-1">
+        <div class=" mb-3 col-6 offset-3">
+            <div class="card" style="width: 24rem;">
+                <div class="card-header ">
+                    <h2 class="offset-4"><b> Details </b></h2>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col">
+                                <p><b>Title</b>
+                                    <%= user.userTitle %>
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p>
+                                    <b>Executive:</b>
+                                    <%= user.executive %>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <p> <b>Name:</b>
+                            <%= user.username %>
+                                <b>Surname: </b>
+                                <%= user.surname %>
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <p>
+                            <b>Email:</b>
+                            <%= user.email %>
+                        </p>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col">
+                                <p><b>Street:</b>
+                                    <%= user.postcode %>
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p>
+                                    <b>City:</b>
+                                    <%= user.city %>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <p><b>Country:</b>
+                            <%= user.country %>
+                        </p>
+                    </li>
+                </ul>
+                <div class="card-body ">
+                    <!-- I changed from account to allusers -->
+                    <a class="d-inline card-link btn btn-warning" href="/allusers/<%=user._id%>/edit ">Edit</a>
+                    <% if(currentUser && user.equals(currentUser._id)) {%>
+                        <a class="d-inline card-link btn btn btn-danger" href="/allusers/<%=user._id%>/card ">Add
+                            card</a>
+                        <% } %>
+                            <a class="d-inline card-link btn btn btn-success"
+                                href="/allusers/<%=user._id%>/allcards">Cards
+                            </a>
+                            <a class="d-inline card-link btn btn btn-danger" href="/allusers ">Return</a>
+                </div>
+            </div>
+        </div>
+    </div>

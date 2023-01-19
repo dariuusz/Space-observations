@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate-home")%>
+
+    <div class=" mt-4 row w-50 offset-3">
+        <div class=" card text-center ">
+            <div class="card-header">
+                <h2><b>
+                        <%= message.title %>
+                    </b></h2>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <b>Send by: </b>
+                    <%= message.user.username %>
+                </p>
+                <p class="card-text">
+                    <%= message.content %>
+                </p>
+            </div>
+
+            <div class="card-body ">
+
+                <a href="/newmessage" class="btn btn-primary">Answer</a>
+                <a href="/allmessages" class="btn btn-primary">All messages</a>
+            </div>
+
+            <div class="card-footer text-muted">
+                <%= message.date %>
+            </div>
+        </div>
+    </div>

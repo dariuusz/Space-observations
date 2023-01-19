@@ -1,0 +1,17 @@
+.navbar,
+footer {
+    background-color: #0033cc;
+}
+
+.font-colour {
+    color: #f0f0f5;
+}
+
+.font-colour-2 {
+    color: #ff9900;
+
+}
+
+.card-header {
+    background-color: #ff9900;
+}

@@ -1,0 +1,33 @@
+<% layout("/layouts/boilerplate-home")%>
+    <div class=" mt-5 row">
+        <h1 class="mb-3 text-center">New message</h1>
+        <div class=" mb-3 col-6 offset-3">
+            <form action="/newmessage" method="POST" novalidate class="validated-form">
+                <div class="mb-3 row g-3">
+                    <div class="col">
+                        <label for="inputEmail2" class="visually-hidden">Title</label>
+                        <input type="text" for="title" name="title" id="title" class="form-control" placeholder="Title"
+                            aria-label="First name" required>
+                    </div>
+                    <div class=" mb-3 col">
+                        <input type="date" id="date" name="date" value="2022-05-6" min="2022-04-28" class="form-control"
+                            placeholder="Last name" aria-label="Last name" required>
+                    </div>
+                </div>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="content" value="content"
+                        name="content" style="height: 100px" required></textarea>
+                    <label for="text" id="text" value="text">Text</label>
+                </div>
+                <div class="card-footer text-muted">
+
+                    <div>
+                        <button class="btn btn-success">Send</button>
+                        <a class="btn btn-danger" href="/allmessages">All messages</a>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>

@@ -1,0 +1,93 @@
+<% layout("/layouts/boilerplate-home")%>
+    <div class=" mt-5 mb-5 row  w-70">
+        <div class=" card text-center ">
+            <div class=" card-header">
+                <h1 class="text-center">Create an account</h1>
+            </div>
+            <div class="card-body">
+                <div class="mt-3 col-6 offset-3">
+                    <form action="/allusers" method="post" novalidate class="validated-form">
+                        <div class="mb-3 form-check form-check-inline">
+                            <div class=" form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="category" value="individual"
+                                    for="category" name="category" required>
+                                <label class="form-check-label">Individual</label>
+                            </div>
+                            <div class=" form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="category" value="corporate"
+                                    for="category" name="category">
+                                <label class="form-check-label">Corporate</label>
+                            </div>
+                            <div class=" form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="category" value="academic"
+                                    for="category" name="category">
+                                <label class="form-check-label">Academic</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="userTitle">Title:</label>
+                            <select id="userTitle" name="userTitle" required>
+                                <option value="Mr">Mr</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Ms">Ms</option>
+                                <option value="Dr">Dr</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <section>
+                                <label for="executive">ExecutiveAccount:</label>
+                                <input id="executive" name="executive" type="checkbox" value="true">
+                            </section>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col">
+                                <label class="form-label" for="username">Username</label>
+                                <input class="form-control" type="text" id="username" name="username" required>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="password">Password</label>
+                                <input class="form-control" type="text" id="password" name="password" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col">
+                                <label class="form-label" for="forename">Forename</label>
+                                <input class="form-control" type="text" id="forename" name="forename" required>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="surname">Surname</label>
+                                <input class="form-control" type="text" id="surname" name="surname" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-control" type="text" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="street">Street</label>
+                            <input class="form-control" type="text" id="street" name="street" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="houseNumber">House Number</label>
+                            <input class="form-control" type="text" id="houseNumber" name="houseNumber" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="postcode">Postcode</label>
+                            <input class="form-control" type="text" id="postcode" name="postcode" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="city">City</label>
+                            <input class="form-control" type="text" id="city" name="city" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="country">Country</label>
+                            <input class="form-control" type="text" id="country" name="country" required>
+                        </div>
+                </div>
+            </div>
+            <div class="mb-3 ">
+                <button class="btn btn-success">Register</button>
+            </div>
+            </form>
+        </div>
+    </div>

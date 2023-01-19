@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate-home")%>
+
+
+    <% for(let card of user.card){ %>
+
+        <div class=" mt-3 row">
+            <div class=" mb-3 col-6 offset-3">
+                <div class="card" style="width: 24rem;">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <p class="list-group-item"><b>Name: </b>
+                                    <%= card.cardOwner %>
+                                </p>
+                            </h5>
+                            <h5 class="card-title">
+                                <p class="list-group-item"> <b>Card number:</b>
+                                    <%= card.cardNumber %>
+                                </p>
+                            </h5>
+                            <h5 class="card-title">
+                                <p class="list-group-item"><b>Name: </b>
+                                    <%= card.cardOwner %>
+                                </p>
+                            </h5>
+                            <h5 class="card-title">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="list-group-item"><b>Month</b>
+                                            <%= card.expireMonth %>
+                                        </p>
+                                    </div>
+                                    <div class="col">
+                                        <p class="list-group-item"><b>Year:</b>
+                                            <%= card.expireYear %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </h5>
+                            <form class="d-inline offset-3"
+                                action="/allusers/<%=user._id%>/allcards/<%=card._id%>?_method=DELETE" method="POST">
+                                <button class="btn btn-warning">DELETE</button>
+                            </form>
+                            <a class="btn btn-success" href="/allusers/<%=user._id%>">Return</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>

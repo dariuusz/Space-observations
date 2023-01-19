@@ -1,0 +1,93 @@
+<% layout("/layouts/boilerplate-home")%>
+    <h1 class="offset-5">All messages</h1>
+    <% messages.forEach(function(obj, index){ %>
+        <% if( currentUser.executive===true ) {%>
+            <div class="row mt-2">
+                <div class="col-12 ">
+                    <div class="card mb-5 ">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Content</th>
+                                    <th scope="col">Text</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <%= index +1%>
+                                    </th>
+                                    <td>
+                                        <%=obj._id%>
+                                    </td>
+                                    <td>
+                                        <%=obj.title%>
+                                    </td>
+                                    <td>
+                                        <%=obj.date%>
+                                    </td>
+                                    <td>
+                                        <%=obj.content%>
+                                    </td>
+                                    <td>
+                                        <a class="d-inline card-link btn btn btn-danger"
+                                            href="/allmessages/<%=obj._id %> ">Read</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <% }%>
+                <% if (obj.user.equals(currentUser._id) && currentUser.executive===false ){%>
+                    <% index=0 %>
+                        <div class="row mt-2">
+                            <div class="col-12 ">
+                                <div class="card mb-5 ">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Id</th>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Content</th>
+                                                <th scope="col">Text</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">
+                                                    <%= index +1%>
+                                                </th>
+                                                <td>
+                                                    <%=obj._id%>
+                                                </td>
+                                                <td>
+                                                    <%=obj.title%>
+                                                </td>
+                                                <td>
+                                                    <%=obj.date%>
+                                                </td>
+                                                <td>
+                                                    <%=obj.content%>
+                                                </td>
+                                                <td>
+                                                    <a class="d-inline card-link btn btn btn-danger"
+                                                        href="/allmessages/<%=obj._id %> ">Read</a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                            <% }) %>

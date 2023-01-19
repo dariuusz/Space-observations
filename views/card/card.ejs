@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate-home")%>
+    <div class="row mt-2">
+        <div class="col-12 ">
+            <div class="card mb-5 ">
+                <h1 class="offset-5">Users page</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Id</th>
+                            <th scope="col">Card number</th>
+                            <th scope="col">Card Owner</th>
+                            <th scope="col">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% cards.forEach(function(obj, index){ %>
+                            <tr>
+                                <th scope="row">
+                                    <%= index +1%>
+                                </th>
+                                <td>
+                                    <%=obj._id%>
+                                </td>
+                                <td>
+                                    <%=obj.cardNumber%>
+                                </td>
+                                <td>
+                                    <%=obj.cardOwner%>
+                                </td>
+                                <td>
+                                    <a class="d-inline card-link btn btn btn-danger"
+                                        href="/card/<%=obj._id %> ">Edit</a>
+                                </td>
+                            </tr>
+                            <% })%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
